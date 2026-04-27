@@ -1,0 +1,71 @@
+[alias]
+    # статус
+    st = status -sb
+
+    # короткий лог
+    lg = log --oneline --decorate --all
+
+    # красивый граф (основной)
+    graph = log --oneline --graph --decorate --all
+
+    # подробный лог
+    lga = log --graph --pretty=format:'%C(yellow)%h%Creset %C(blue)|%Creset %s %C(blue)|%Creset %cs (%cr) %C(red)%d%Creset' --all
+
+    # последние коммиты
+    last = log -1 HEAD
+
+    # кто менял файл
+    who = blame
+
+    # быстрый commit
+    cm = commit -m
+
+    # amend последнего коммита
+    amend = commit --amend --no-edit
+
+    # добавить всё и закоммитить
+    ac = !git add . && git commit -m
+
+    # checkout ветки
+    co = checkout
+
+    # создать новую ветку
+    cob = checkout -b
+
+    # показать ветки
+    br = branch
+
+    # удалить локальную ветку
+    bd = branch -d
+
+    # удалить удалённую ветку
+    bdr = push origin --delete
+
+    # подтянуть изменения с rebase
+    up = pull --rebase
+
+    # push
+    ps = push
+
+    # force push (осторожно)
+    pf = push --force-with-lease
+
+    # diff
+    df = diff
+
+    # diff staged
+    dfs = diff --staged
+
+    # reset staged
+    unstage = reset HEAD --
+
+    # откатить изменения файла
+    undo = checkout --
+
+    # squash последних коммитов
+    squash = reset --soft HEAD~1
+
+    # контролируемый merge (без автокоммита)
+    mc = merge --no-ff --no-commit --log
+[rerere]
+	enabled = true
